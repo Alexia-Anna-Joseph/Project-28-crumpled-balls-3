@@ -29,7 +29,7 @@ function setup() {
     side1 = new DUSTBIN (900,620,20,100)
     side2 = new DUSTBIN (1100,620,20,100)
     side3 = new DUSTBIN (1000,600,200,20)
-    launcherObject=new launcher(paperObject.body,{x:300,y:300})
+    launcherObject=new launcher(ball.body,{x:300,y:300})
 
 	Engine.run(engine);
   
@@ -56,14 +56,14 @@ function draw() {
 
 function mouseDragged()
 {
-	Matter.Body.setPosition(paperObject.body, {x:mouseX, y:mouseY})
+	Matter.Body.setPosition(ball.body, {x:mouseX, y:mouseY})
   
 }
 
 function mouseReleased()
 {
 	
-	launcherObject.fly();
+	launcher.fly();
  
 }
 

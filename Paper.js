@@ -1,4 +1,4 @@
-class PAPER{
+class Paper{
     constructor(x,y){
 
 var options={
