@@ -5,9 +5,11 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
 var dustbin;
+var PAPER;
 var ball;
+
 var ground;
-var launcher;
+var launcherObject;
 var launchingForce=100;
 var lastMouseX=null;
 var lastMouseY=null;
@@ -24,12 +26,12 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	ball = new PAPER(75,300);
+   	paper = new BALL(75,300,5,10)
     ground = new GROUND(700,620,1400,20)
     side1 = new DUSTBIN (900,620,20,100)
     side2 = new DUSTBIN (1100,620,20,100)
     side3 = new DUSTBIN (1000,600,200,20)
-    launcherObject=new launcher(ball.body,{x:300,y:300})
+    launcher=new launcherObject(paper.body,{x:300,y:300})
 
 	Engine.run(engine);
   
@@ -46,17 +48,17 @@ function draw() {
 
   ground.display();
   
-  ball.display();
+  paper.display();
   
   drawSprites();
 
-  launcherObject.display();
+  launcher.display();
  
 }
 
 function mouseDragged()
 {
-	Matter.Body.setPosition(ball.body, {x:mouseX, y:mouseY})
+	Matter.Body.setPosition(Paper.body, {x:mouseX, y:mouseY})
   
 }
 
