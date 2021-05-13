@@ -6,7 +6,7 @@ const Body = Matter.Body;
 
 var dustbin;
 var PAPER;
-var ball;
+
 
 var ground;
 var launcherObject;
@@ -26,12 +26,12 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-   	paper = new BALL(75,300,5,10)
-    ground = new GROUND(700,620,1400,20)
-    side1 = new DUSTBIN (900,620,20,100)
-    side2 = new DUSTBIN (1100,620,20,100)
-    side3 = new DUSTBIN (1000,600,200,20)
-    launcher=new launcherObject(paper.body,{x:300,y:300})
+   	paper = (75,300,5,10)
+    ground = (700,620,1400,20)
+    side1 =  (900,620,20,100)
+    side2 =  (1100,620,20,100)
+    side3 = (1000,600,200,20)
+    launcher=(paper.body,{x:300,y:300})
 
 	Engine.run(engine);
   
@@ -46,13 +46,7 @@ function draw() {
 
   
 
-  ground.display();
   
-  paper.display();
-  
-  drawSprites();
-
-  launcher.display();
  
 }
 
@@ -65,7 +59,7 @@ function mouseDragged()
 function mouseReleased()
 {
 	
-	launcher.fly();
+	
  
 }
 
